@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { ArrowRight, ExternalLink, Github } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
+import { Github } from "./icons/BrandIcons";
 
 
 const projects = [
