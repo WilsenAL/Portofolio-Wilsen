@@ -1,11 +1,5 @@
-import {
-  Github,
-  Instagram,
-  Linkedin,
-  Mail,
-  MapPin,
-  Phone,
-} from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
+import { Github, Instagram, Linkedin } from "./icons/BrandIcons";
 
 export const ContactSection = () => {
   return (
