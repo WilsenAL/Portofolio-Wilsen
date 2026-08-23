@@ -3,35 +3,36 @@ import { cn } from "@/lib/utils";
 
 const skills = [
   // Application
-  { name: "Flutter", level: 85, category: "application" },
-  { name: "Dart", level: 80, category: "application" },
-  { name: "Kotlin", level: 85, category: "application" },
-  { name: "Java", level: 90, category: "application" },
-  { name: "Swift", level: 80, category: "application" },
-  { name: "Unity", level: 75, category: "application" },
-  { name: "C Language", level: 75, category: "application" },
+  { name: "Flutter", level: 100, category: "application" },
+  { name: "Dart", level: 100, category: "application" },
+  { name: "Kotlin", level: 100, category: "application" },
+  { name: "Java", level: 100, category: "application" },
+  { name: "Swift", level: 100, category: "application" },
+  { name: "Unity", level: 100, category: "application" },
+  { name: "C Language", level: 100, category: "application" },
 
   // Website
-  { name: "HTML/CSS", level: 95, category: "website" },
-  { name: "JavaScript", level: 90, category: "website" },
-  { name: "React", level: 90, category: "website" },
-  { name: "Tailwind CSS", level: 80, category: "website" },
-  { name: "Node.js", level: 80, category: "website" },
+  { name: "HTML/CSS", level: 100, category: "website" },
+  { name: "JavaScript", level: 100, category: "website" },
+  { name: "React", level: 100, category: "website" },
+  { name: "Tailwind CSS", level: 100, category: "website" },
+  { name: "Node.js", level: 100, category: "website" },
+  { name: ".NET Core", level: 100, category: "website" },
 
   // Database
-  { name: "Firebase", level: 80, category: "database" },
-  { name: "MySQL", level: 85, category: "database" },
-  { name: "MongoDB", level: 80, category: "database" },
+  { name: "Firebase", level: 100, category: "database" },
+  { name: "MySQL", level: 100, category: "database" },
+  { name: "MongoDB", level: 100, category: "database" },
 
   // Crypto & Web3
-  { name: "Blockchain Basics", level: 85, category: "crypto" },
-  { name: "Smart Contracts", level: 70, category: "crypto" },
-  { name: "Crypto Trading & Analysis", level: 85, category: "crypto" },
+  { name: "Blockchain Basics", level: 100, category: "crypto" },
+  { name: "Smart Contracts", level: 100, category: "crypto" },
+  { name: "Crypto Trading & Analysis", level: 100, category: "crypto" },
 
   // Tools
-  { name: "Git/GitHub", level: 90, category: "tools" },
-  { name: "Figma", level: 85, category: "tools" },
-  { name: "VS Code", level: 95, category: "tools" },
+  { name: "Git/GitHub", level: 100, category: "tools" },
+  { name: "Figma", level: 100, category: "tools" },
+  { name: "VS Code", level: 100, category: "tools" },
 ];
 
 const categories = ["all", "application", "website", "database", "crypto", "tools"];

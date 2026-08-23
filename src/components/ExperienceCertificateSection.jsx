@@ -5,6 +5,7 @@ export const ExperienceCertificateSection = () => {
   const [activeTab, setActiveTab] = useState("experience");
 
   const experiences = [
+    { title: "Full-Stack Application Developer & IT Support Intern", company: "PT Tera Multi Wahana ", year: "Feb 2026 - Feb 2027" },
     { title: "Pre-Training Asisten Lab", company: "Binus", year: "2023" },
     { title: "Web Dev 11.0 – HTML / CSS", company: "Dibimbing", year: "2025" },
   ];
@@ -15,6 +16,12 @@ export const ExperienceCertificateSection = () => {
     issuer: "Yunepto", 
     year: "2025",
     image: "/certificate/Web3Hero.png" // path gambar kamu
+  },
+  { 
+    title: "Microsoft Elevate AI Training Session", 
+    issuer: "Binus University", 
+    year: "July 2026",
+    image: "/certificate/CertificateTrainingAI.png" // path gambar kamu
   },
 ];
 

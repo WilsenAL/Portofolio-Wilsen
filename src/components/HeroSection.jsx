@@ -21,7 +21,8 @@ export const HeroSection = () => {
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
-            I am currently pursuing a degree in Mobile Application and Technology at Binus University. I have experience in developing both mobile applications and websites, with the ability to design intuitive and user-friendly interfaces. In addition, I have knowledge and experience in the fields of cryptocurrency and Web3, allowing me to integrate modern financial technologies into digital solutions.
+            {/* I am currently pursuing a degree in Mobile Application and Technology at Binus University. I have experience in developing both mobile applications and websites, with the ability to design intuitive and user-friendly interfaces. In addition, I have knowledge and experience in the fields of cryptocurrency and Web3, allowing me to integrate modern financial technologies into digital solutions. */}
+            I build scalable mobile apps, web solutions, and AI-driven platforms. Passionate about sleek UI/UX design, modern backend architectures, and Web3 technologies.
           </p>
 
           <div className="pt-4 opacity-0 animate-fade-in-delay-4">
