@@ -9,6 +9,7 @@
   --color-primary-foreground: hsl(var(--primary-foreground));
 
   --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
 
   --animate-float: float 6s ease-in-out infinite;
   --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinite;
@@ -17,20 +18,17 @@
   --animate-fade-in-delay-2: fade-in 0.7s ease-out 0.4s forwards;
   --animate-fade-in-delay-3: fade-in 0.7s ease-out 0.6s forwards;
   --animate-fade-in-delay-4: fade-in 0.7s ease-out 0.8s forwards;
-  --animate-meteor: meteor 5s linear infinite;
 
   @keyframes float {
-    0%,
-    100% {
+    0%, 100% {
       transform: translateY(0);
     }
     50% {
-      transform: translateY(-10px);
+      transform: translateY(-8px);
     }
   }
   @keyframes pulse-subtle {
-    0%,
-    100% {
+    0%, 100% {
       opacity: 1;
     }
     50% {
@@ -40,52 +38,42 @@
   @keyframes fade-in {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(16px);
     }
     to {
       opacity: 1;
       transform: translateY(0);
     }
   }
-  @keyframes meteor {
-    0% {
-      transform: rotate(215deg) translateX(0);
-      opacity: 1;
-    }
-    70% {
-      opacity: 1;
-    }
-    100% {
-      transform: rotate(215deg) translateX(-500px);
-      opacity: 0;
-    }
-  }
 }
 
 @layer base {
   :root {
-    /* Soft Lavender/Ice-Blue Off-White */
-    --background: 230 25% 97%; 
-    --foreground: 222 47% 11%;
+    /* LIGHT MODE: Clean Ceramic White & Indigo Accents */
+    --background: 220 33% 98%; 
+    --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
 
-    --primary: 250 60% 60%;
+    --primary: 239 84% 60%; /* Electric Indigo */
     --primary-foreground: 210 40% 98%;
 
-    --border: 214 32% 91%;
+    --border: 214.3 31.8% 91.4%;
   }
 
   .dark {
-    --background: 222 47% 4%;
-    --foreground: 213 31% 91%;
+    /* DARK MODE: Deep Obsidian Slate & Subtle Neon Glow */
+    --background: 224 47% 6%; /* Deep Charcoal Navy */
+    --foreground: 210 40% 98%;
 
-    --card: 222 47% 8%;
+    --card: 224 47% 9%; /* Glassmorphism Base Card */
+    --card-foreground: 210 40% 98%;
 
-    --primary: 250 65% 65%;
-    --primary-foreground: 213 31% 91%;
+    --primary: 245 85% 68%; /* Electric Violet Glow */
+    --primary-foreground: 210 40% 98%;
 
-    --border: 217 33% 20%;
+    --border: 217.2 32.6% 16%;
   }
 
   * {
@@ -99,14 +87,16 @@
   body {
     background-color: hsl(var(--background));
     background-image: 
-      radial-gradient(at 0% 0%, rgba(139, 92, 246, 0.08) 0px, transparent 50%),
-      radial-gradient(at 100% 100%, rgba(99, 102, 241, 0.08) 0px, transparent 50%);
+      radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.05) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.05) 0px, transparent 50%);
     @apply text-foreground transition-colors duration-300;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
   .dark body {
-    background-image: none;
+    background-image: 
+      radial-gradient(at 50% 0%, rgba(99, 102, 241, 0.12) 0px, transparent 60%),
+      radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.08) 0px, transparent 50%);
   }
 }
 
@@ -133,48 +123,21 @@
 
 @utility text-glow {
   @apply relative;
-  text-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
+  text-shadow: 0 0 12px rgba(129, 140, 248, 0.4);
 }
 
 @utility card-hover {
-  @apply transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg;
+  @apply transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/5;
 }
 
 @utility gradient-border {
-  @apply relative rounded-md;
-  background: linear-gradient(to right, hsl(var(--card)), hsl(var(--card)));
-  background-clip: padding-box;
-  border: 1px solid transparent;
+  @apply relative rounded-2xl border border-border/80 bg-card/60 backdrop-blur-md;
 }
 
 @utility cosmic-button {
-  @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium 
-         transition-all duration-300 hover:shadow-[0_0_10px_rgba(139,92,246,0.5)]
+  @apply px-6 py-2.5 rounded-full bg-primary text-primary-foreground font-semibold text-xs md:text-sm
+         transition-all duration-300 hover:shadow-[0_0_20px_rgba(99,102,241,0.4)]
          hover:scale-105 active:scale-95;
-}
-
-/* Star Utility */
-@utility star {
-  @apply absolute rounded-full transition-colors duration-300;
-  background-color: rgba(30, 27, 75, 0.75);
-  box-shadow: 0 0 8px 1px rgba(99, 102, 241, 0.5);
-}
-
-.dark .star {
-  background-color: #ffffff;
-  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
-}
-
-/* Meteor Utility */
-@utility meteor {
-  @apply absolute rounded-full transition-colors duration-300;
-  background-image: linear-gradient(to right, #4f46e5, #7c3aed, transparent);
-  box-shadow: 0 0 12px 3px rgba(124, 58, 237, 0.5);
-}
-
-.dark .meteor {
-  background-image: linear-gradient(to right, #ffffff, #ffffff, transparent);
-  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
 }
 
 #root {

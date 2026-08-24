@@ -1,6 +1,4 @@
 import { Navbar } from "../components/Navbar";
-import { ThemeToggle } from "../components/ThemeToggle";
-import { StarBackground } from "@/components/StarBackground";
 import { InteractiveParticles } from "../components/InteractiveParticles";
 import { HeroSection } from "../components/HeroSection";
 import { AboutSection } from "../components/AboutSection";
@@ -13,11 +11,8 @@ import { ExperienceCertificateSection } from "../components/ExperienceCertificat
 export const Home = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden relative">
-      {/* Interactive Web-Mesh Particles Canvas */}
+      {/* Cukup gunakan kanvas jaringan interaktif ini saja */}
       <InteractiveParticles />
-
-      {/* Background Star Effect */}
-      <StarBackground />
 
       {/* Navbar */}
       <Navbar />
